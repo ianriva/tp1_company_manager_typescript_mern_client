@@ -1,12 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import CompanyList from './components/Company/CompanyList';
+import CompanyForm from './components/Company/CompanyForm';
+import "bootswatch/dist/darkly/bootstrap.min.css" ;
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={CompanyList} />
+        <Route path="/new-company" component={CompanyForm} />
+      </Switch>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
